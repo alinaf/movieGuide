@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		CD21A5C11EFB120100673AE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD21A5C01EFB120100673AE9 /* AppDelegate.swift */; };
-		CD21A5C31EFB120100673AE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD21A5C21EFB120100673AE9 /* ViewController.swift */; };
 		CD21A5C61EFB120100673AE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD21A5C41EFB120100673AE9 /* Main.storyboard */; };
 		CD21A5C81EFB120200673AE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD21A5C71EFB120200673AE9 /* Assets.xcassets */; };
 		CD21A5CB1EFB120200673AE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD21A5C91EFB120200673AE9 /* LaunchScreen.storyboard */; };
 		CD21A5D61EFB120200673AE9 /* movieGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD21A5D51EFB120200673AE9 /* movieGuideTests.swift */; };
 		CD21A5E11EFB120200673AE9 /* movieGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD21A5E01EFB120200673AE9 /* movieGuideUITests.swift */; };
+		CD76CF571EFB1D64007CCC11 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76CF561EFB1D64007CCC11 /* NowPlayingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		CD21A5BD1EFB120100673AE9 /* movieGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD21A5C01EFB120100673AE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD21A5C21EFB120100673AE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CD21A5C51EFB120100673AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD21A5C71EFB120200673AE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD21A5CA1EFB120200673AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		CD21A5DC1EFB120200673AE9 /* movieGuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = movieGuideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD21A5E01EFB120200673AE9 /* movieGuideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieGuideUITests.swift; sourceTree = "<group>"; };
 		CD21A5E21EFB120200673AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD76CF561EFB1D64007CCC11 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				CD21A5C01EFB120100673AE9 /* AppDelegate.swift */,
-				CD21A5C21EFB120100673AE9 /* ViewController.swift */,
 				CD21A5C41EFB120100673AE9 /* Main.storyboard */,
 				CD21A5C71EFB120200673AE9 /* Assets.xcassets */,
 				CD21A5C91EFB120200673AE9 /* LaunchScreen.storyboard */,
 				CD21A5CC1EFB120200673AE9 /* Info.plist */,
+				CD76CF561EFB1D64007CCC11 /* NowPlayingViewController.swift */,
 			);
 			path = movieGuide;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD21A5C31EFB120100673AE9 /* ViewController.swift in Sources */,
+				CD76CF571EFB1D64007CCC11 /* NowPlayingViewController.swift in Sources */,
 				CD21A5C11EFB120100673AE9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +505,7 @@
 				CD21A5E71EFB120200673AE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD21A5E81EFB120200673AE9 /* Build configuration list for PBXNativeTarget "movieGuideTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +514,7 @@
 				CD21A5EA1EFB120200673AE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD21A5EB1EFB120200673AE9 /* Build configuration list for PBXNativeTarget "movieGuideUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +523,7 @@
 				CD21A5ED1EFB120200673AE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
