@@ -2,22 +2,41 @@ PODS:
   - Alamofire (4.5.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
+  - KRActivityIndicatorView (2.0.2)
+  - KRProgressHUD (3.0.0):
+    - KRActivityIndicatorView (~> 2.0.2)
   - OAuthSwift (1.1.2)
   - OAuthSwiftAlamofire (0.1.0):
     - Alamofire
     - OAuthSwift
+  - PKHUD (4.2.3)
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.1)
+  - KRProgressHUD
   - OAuthSwift (~> 1.1.0)
   - OAuthSwiftAlamofire
+  - PKHUD (from `https://github.com/pkluz/PKHUD.git`, branch `release/swift4`)
+
+EXTERNAL SOURCES:
+  PKHUD:
+    :branch: release/swift4
+    :git: https://github.com/pkluz/PKHUD.git
+
+CHECKOUT OPTIONS:
+  PKHUD:
+    :commit: 3fb1f5325c3dc50adfe310ca0b859aa18bffd04b
+    :git: https://github.com/pkluz/PKHUD.git
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  KRActivityIndicatorView: 2a9d5442ba8da6274db3afdf46aeaef7cf6dd8ad
+  KRProgressHUD: 14f9fad06080bdb1e59569104a8eda654c83e813
   OAuthSwift: 5aa5659984d3ca3206ba636a9e7a9c6626b2e8bd
   OAuthSwiftAlamofire: 20bb998ac506f82c3bab0625fbc98a9c6fca783f
+  PKHUD: 351011b853e6b942e7ee8ad335864cc84c787241
 
-PODFILE CHECKSUM: 36f46a50ee47408b882b9f12288d241b990adb85
+PODFILE CHECKSUM: e3f8bd62d8e868b2c596290ddd3decb0a1e157a7
 
 COCOAPODS: 1.2.1

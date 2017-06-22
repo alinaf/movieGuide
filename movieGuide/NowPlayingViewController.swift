@@ -8,6 +8,8 @@
 
 import UIKit
 import AlamofireImage
+import KRProgressHUD
+
 
 class NowPlayingViewController: UIViewController, UITableViewDataSource {
     
@@ -20,6 +22,8 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        KRProgressHUD.show()
+
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
@@ -28,6 +32,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         
         tableView.dataSource = self
         fetchMovies()
+        
 
     }
     
@@ -49,11 +54,13 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
                 self.movies = movies
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
+                KRProgressHUD.dismiss()
             }
             
         }
         
-        task.resume()}
+        task.resume()
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,6 +85,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
