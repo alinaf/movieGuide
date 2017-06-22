@@ -18,6 +18,7 @@
 		CD21A5E11EFB120200673AE9 /* movieGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD21A5E01EFB120200673AE9 /* movieGuideUITests.swift */; };
 		CD76CF571EFB1D64007CCC11 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76CF561EFB1D64007CCC11 /* NowPlayingViewController.swift */; };
 		CD76CF591EFB2D1D007CCC11 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD76CF581EFB2D1D007CCC11 /* MovieCell.swift */; };
+		CD7CE8C11EFB44A200C5EF21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7CE8C01EFB44A200C5EF21 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		CD21A5E21EFB120200673AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD76CF561EFB1D64007CCC11 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		CD76CF581EFB2D1D007CCC11 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		CD7CE8C01EFB44A200C5EF21 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,13 +141,13 @@
 		CD21A5BF1EFB120100673AE9 /* movieGuide */ = {
 			isa = PBXGroup;
 			children = (
+				CD7CE8BF1EFB445800C5EF21 /* Views */,
+				CD7CE8BE1EFB444900C5EF21 /* ViewControllers */,
 				CD21A5C01EFB120100673AE9 /* AppDelegate.swift */,
 				CD21A5C41EFB120100673AE9 /* Main.storyboard */,
 				CD21A5C71EFB120200673AE9 /* Assets.xcassets */,
 				CD21A5C91EFB120200673AE9 /* LaunchScreen.storyboard */,
 				CD21A5CC1EFB120200673AE9 /* Info.plist */,
-				CD76CF561EFB1D64007CCC11 /* NowPlayingViewController.swift */,
-				CD76CF581EFB2D1D007CCC11 /* MovieCell.swift */,
 			);
 			path = movieGuide;
 			sourceTree = "<group>";
@@ -166,6 +168,23 @@
 				CD21A5E21EFB120200673AE9 /* Info.plist */,
 			);
 			path = movieGuideUITests;
+			sourceTree = "<group>";
+		};
+		CD7CE8BE1EFB444900C5EF21 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD76CF561EFB1D64007CCC11 /* NowPlayingViewController.swift */,
+				CD7CE8C01EFB44A200C5EF21 /* DetailViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CD7CE8BF1EFB445800C5EF21 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD76CF581EFB2D1D007CCC11 /* MovieCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +471,7 @@
 				CD76CF571EFB1D64007CCC11 /* NowPlayingViewController.swift in Sources */,
 				CD21A5C11EFB120100673AE9 /* AppDelegate.swift in Sources */,
 				CD76CF591EFB2D1D007CCC11 /* MovieCell.swift in Sources */,
+				CD7CE8C11EFB44A200C5EF21 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
