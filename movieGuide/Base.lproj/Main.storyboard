@@ -122,6 +122,7 @@
                     </view>
                     <connections>
                         <outlet property="backDropImageView" destination="nVP-9r-9AH" id="VqD-XX-tUc"/>
+                        <outlet property="backgroundView" destination="lFR-GC-0gh" id="4Tx-yN-Rbj"/>
                         <outlet property="overview" destination="wCq-S6-STT" id="g3F-hf-SeV"/>
                         <outlet property="posterImageView" destination="2JW-5C-Bxp" id="BeI-Nm-BO1"/>
                         <outlet property="releaseDateLabel" destination="5Oz-WA-JTS" id="fz6-OJ-EVD"/>

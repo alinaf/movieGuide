@@ -11,6 +11,7 @@ target 'movieGuide' do
   # Add additional dependencies
   pod 'OAuthSwift', '~> 1.1.0'
   pod 'OAuthSwiftAlamofire'
+  pod 'UIImageColors'
   pod 'PKHUD', :git => 'https://github.com/pkluz/PKHUD.git', :branch => 'release/swift4’
   pod "KRProgressHUD"
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import UIImageColors
 
 
 enum MovieKeys {
@@ -31,6 +32,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var overview: UILabel!
     
+    @IBOutlet var backgroundView: UIView!
     
     var movie: [String: Any]?
     
@@ -50,6 +52,23 @@ class DetailViewController: UIViewController {
             
             let posterPathURL = URL(string: baseURLString + posterPathString)!
             posterImageView.af_setImage(withURL: posterPathURL)
+            
+            let imageData = try? Data(contentsOf: backDropURL)
+            let backDropImage = UIImage(data: imageData!)
+            
+            let colors = backDropImage?.getColors()
+            titleLabel.textColor = colors?.secondary
+            backgroundView.backgroundColor = colors?.background
+            releaseDateLabel.textColor = colors?.primary
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
     }
 
