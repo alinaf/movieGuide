@@ -57,9 +57,10 @@ class DetailViewController: UIViewController {
             let backDropImage = UIImage(data: imageData!)
             
             let colors = backDropImage?.getColors()
-            titleLabel.textColor = colors?.secondary
+            titleLabel.textColor = colors?.primary
             backgroundView.backgroundColor = colors?.background
-            releaseDateLabel.textColor = colors?.primary
+            releaseDateLabel.textColor = colors?.secondary
+            overview.textColor = colors?.detail
             
             
             

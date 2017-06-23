@@ -15,7 +15,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
     var movies: [[String: Any]] = []
     var refreshControl: UIRefreshControl!
     
@@ -73,8 +72,23 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         let movie = movies[indexPath.row]
         let title = movie["title"] as! String
         let overview = movie["overview"] as! String
+        let rating = movie["vote_average"] as! Double
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
+        cell.ratingLabel.text = "\(String(describing: rating))"
+        
+       let myRed = UIColor(red:0.68, green:0.17, blue:0.17, alpha:1.0)
+       let myGreen = UIColor(red:0.22, green:0.59, blue:0.30, alpha:1.0)
+        
+        if rating >= 7.00 {
+            cell.ratingLabel.textColor = myGreen
+        } else if rating < 6.00 {
+            cell.ratingLabel.textColor = myRed
+        } else {
+            cell.ratingLabel.textColor = UIColor.black
+        }
+        
+        
         
         let posterPathString = movie["poster_path"] as! String
         let baseURLString = "https://image.tmdb.org/t/p/w500"
