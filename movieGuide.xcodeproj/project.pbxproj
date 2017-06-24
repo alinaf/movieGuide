@@ -21,6 +21,7 @@
 		CD7CE8C11EFB44A200C5EF21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7CE8C01EFB44A200C5EF21 /* DetailViewController.swift */; };
 		CD7CE9051EFDC48500C5EF21 /* PosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7CE9041EFDC48500C5EF21 /* PosterCell.swift */; };
 		CD7CE9071EFDC4BF00C5EF21 /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7CE9061EFDC4BF00C5EF21 /* PopularViewController.swift */; };
+		CD7CE9091EFDD16C00C5EF21 /* PopularDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7CE9081EFDD16C00C5EF21 /* PopularDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		CD7CE8C01EFB44A200C5EF21 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CD7CE9041EFDC48500C5EF21 /* PosterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterCell.swift; sourceTree = "<group>"; };
 		CD7CE9061EFDC4BF00C5EF21 /* PopularViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
+		CD7CE9081EFDD16C00C5EF21 /* PopularDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				CD76CF561EFB1D64007CCC11 /* NowPlayingViewController.swift */,
 				CD7CE8C01EFB44A200C5EF21 /* DetailViewController.swift */,
 				CD7CE9061EFDC4BF00C5EF21 /* PopularViewController.swift */,
+				CD7CE9081EFDD16C00C5EF21 /* PopularDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 			files = (
 				CD7CE9071EFDC4BF00C5EF21 /* PopularViewController.swift in Sources */,
 				CD76CF571EFB1D64007CCC11 /* NowPlayingViewController.swift in Sources */,
+				CD7CE9091EFDD16C00C5EF21 /* PopularDetailViewController.swift in Sources */,
 				CD7CE9051EFDC48500C5EF21 /* PosterCell.swift in Sources */,
 				CD21A5C11EFB120100673AE9 /* AppDelegate.swift in Sources */,
 				CD76CF591EFB2D1D007CCC11 /* MovieCell.swift in Sources */,

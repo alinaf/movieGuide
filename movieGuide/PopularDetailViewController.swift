@@ -1,8 +1,8 @@
 //
-//  DetailViewController.swift
+//  PopularDetailViewController.swift
 //  movieGuide
 //
-//  Created by Alina Abidi on 6/21/17.
+//  Created by Alina Abidi on 6/23/17.
 //  Copyright © 2017 Alina Abidi. All rights reserved.
 //
 
@@ -11,17 +11,10 @@ import AlamofireImage
 import UIImageColors
 
 
-enum MovieKeys {
-    static let title = "title"
-    static let release_date = "release_date"
-    static let overview = "overview"
-    static let backDropPath = "backdrop_path"
-    static let posterPath = "poster_path"
-    static let popularity = "popularity"
-}
-
-class DetailViewController: UIViewController {
-
+class PopularDetailViewController: UIViewController {
+    
+    
+    @IBOutlet weak var trendingLabel: UILabel!
     
     @IBOutlet weak var backDropImageView: UIImageView!
     
@@ -29,21 +22,29 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var nowPlayingLabel: UILabel!
     
     @IBOutlet weak var overview: UILabel!
     
-    @IBOutlet var backgroundView: UIView!
+    @IBOutlet weak var backgroundView: UIView!
     
     var movie: [String: Any]?
-    
+    var counter = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let movie = movie {
             titleLabel.text = movie[MovieKeys.title] as? String
-            releaseDateLabel.text = movie[MovieKeys.release_date] as? String
+            nowPlayingLabel.text = movie[MovieKeys.release_date] as? String
             overview.text = movie[MovieKeys.overview] as? String
+            
+            let trendingNumber = counter + 1
+            trendingLabel.text = "Trending # " + "\(String(describing: trendingNumber))"
+            
+            
+            
+            
             let backDropPathString = movie[MovieKeys.backDropPath] as! String
             let posterPathString = movie[MovieKeys.posterPath] as! String
             let baseURLString = "https://image.tmdb.org/t/p/w500"
@@ -60,12 +61,14 @@ class DetailViewController: UIViewController {
             let colors = backDropImage?.getColors()
             titleLabel.textColor = colors?.primary
             backgroundView.backgroundColor = colors?.background
-            releaseDateLabel.textColor = colors?.secondary
+            nowPlayingLabel.textColor = colors?.secondary
             overview.textColor = colors?.detail
-            
-             
-            
-        }
+            trendingLabel.textColor = colors!.primary
+            }
+        
+        
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,5 +77,14 @@ class DetailViewController: UIViewController {
     }
     
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
