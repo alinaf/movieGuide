@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PopularViewController: UIViewController, UICollectionViewDataSource, UIScrollViewDelegate {
+class PopularViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -37,6 +37,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UIScr
     func scrollViewDidScroll(_ scrollView: UIScrollView){
     
         if (!isMoreDataLoading) {
+            
             let scrollViewContentHeight = collectionView.contentSize.height
             let scrollOffsetThreshold = scrollViewContentHeight - collectionView.bounds.size.height
             
@@ -58,6 +59,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UIScr
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
+            self.isMoreDataLoading = false
             // This will run when the network request returns (they are asynchronus)
             if let error = error {
                 print(error.localizedDescription)
@@ -79,6 +81,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource, UIScr
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
+        collectionView.delegate = self
         fetchMovies()
 
         // Do any additional setup after loading the view.
