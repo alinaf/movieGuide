@@ -8,11 +8,13 @@
 
 import UIKit
 
-class PopularViewController: UIViewController, UICollectionViewDataSource {
+class PopularViewController: UIViewController, UICollectionViewDataSource, UIScrollViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     var movies: [[String: Any]] = []
+    var isMoreDataLoading = false
+    var pageCount = 1
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
@@ -32,6 +34,46 @@ class PopularViewController: UIViewController, UICollectionViewDataSource {
         return cell
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView){
+    
+        if (!isMoreDataLoading) {
+            let scrollViewContentHeight = collectionView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - collectionView.bounds.size.height
+            
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && collectionView.isDragging) {
+            isMoreDataLoading = true
+            pageCount += 1
+            print(pageCount)
+            fetchMoreMovies()
+            }
+        }
+    
+    
+    }
+    
+    func fetchMoreMovies() {
+        
+        let pageCountString = String(pageCount)
+        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=3a8164978916a740e3977e79afd28289&page=" + pageCountString)!
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            // This will run when the network request returns (they are asynchronus)
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let data = data {
+                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                let movies = dataDictionary["results"] as! [[String: Any]]
+                self.movies += movies
+                self.collectionView.reloadData()
+    
+                
+            }
+            
+        }
+        
+        task.resume()
+    }
     
     
     override func viewDidLoad() {
@@ -43,7 +85,7 @@ class PopularViewController: UIViewController, UICollectionViewDataSource {
     }
 
     func fetchMovies(){
-        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=3a8164978916a740e3977e79afd28289")!
+        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=3a8164978916a740e3977e79afd28289&page=1")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
