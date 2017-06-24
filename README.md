@@ -34,28 +34,29 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. This is simple and I'll definitely attempt it myself if I have time soon, but turning the release date into a more readable format / parsing or manipulating strings in general.
+2. Other useful/common APIs and what we can do with them (the [New York Times](https://developer.nytimes.com/) has some cool ones!)
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/GX6bZzo.gifv' title='Video Walkthrough' width='400px' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/MlCQHkN.mp4' title='Video Walkthrough' width='400px' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Properly using the pods was a little frustrating, especially because a lot of the help available was in an outdated version of Swift, but they were pretty well-documented. 
 
 ## Credits
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- [Alamo Fire](https://github.com/Alamofire/Alamofire) - used for images
 - [PKHUD](https://github.com/pkluz/PKHUD) - loading screen
-- [UIImageColors] (https://github.com/jathu/UIImageColors) - selects dominant colors given an image
+- [UIImageColors](https://github.com/jathu/UIImageColors) - selects dominant colors given an image
 
 
 ## License
